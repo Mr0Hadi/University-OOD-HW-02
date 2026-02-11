@@ -1,5 +1,6 @@
 package edu.ticket;
 
+import edu.ticket.factory;
 import edu.enums.TicketChannel;
 import edu.enums.TicketStatus;
 import edu.state.TicketState;
@@ -19,7 +20,7 @@ public class Ticket {
         this.id = id;
         this.channel = channel;
         this.type = type;
-        this.handlerStrategy = null; // Factory //do it
+        this.handlerStrategy = TicketHandlerFactory.create(type);
     }
 
     public void setState(TicketState state) {
