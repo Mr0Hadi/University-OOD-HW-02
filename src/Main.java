@@ -7,9 +7,13 @@ public class Main {
 
         TicketService ticketService = new TicketService();
 
-        // Example 1: Bug reported from web
-        Ticket ticket = new Ticket(1,"WEB", "BUG");
-        ticket.setRequest("I see a very very BAD BUG!");
-        ticketService.handle(ticket);
+        Ticket ticket = new Ticket(
+                1,
+                TicketChannel.WEB,
+                TicketType.BUG
+        );
+
+        ticketService.process(ticket);
     }
 }
+
