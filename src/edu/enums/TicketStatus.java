@@ -1,4 +1,5 @@
 package edu.enums;
+
 public enum TicketStatus {
     NEW,
     ASSIGNED,

@@ -1,33 +1,50 @@
 package edu.ticket;
 
+import edu.enums.TicketChannel;
+import edu.enums.TicketStatus;
+import edu.state.TicketState;
+import edu.strategy.TicketHandlerStrategy;
+
 public class Ticket {
     int id;
-    String status = "NEW";
-    String channel;
+    private TicketState state;
+    private final TicketChannel channel;
+    private TicketStatus status;
     String type;
     String request;
     String response;
+    private final TicketHandlerStrategy handlerStrategy;
 
-    public Ticket(int id,String channel, String type) {
+    public Ticket(int id, TicketChannel channel, String type) {
         this.id = id;
         this.channel = channel;
         this.type = type;
+        this.handlerStrategy = null; // Factory //do it
     }
 
-    public String getStatus() {
-        return status;
+    public void setState(TicketState state) {
+        this.state = state;
+    }
+    
+
+    public TicketState getState() {
+        return state;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getChannel() {
+    public TicketChannel getChannel() {
         return channel;
     }
 
-    public void setChannel(String channel) {
-        this.channel = channel;
+    public void setStatus(TicketStatus status) {
+        this.status = status;
+    }
+
+    public TicketStatus getStatus() {
+        return status;
+    }
+
+    public TicketHandlerStrategy getHandlerStrategy() {
+        return handlerStrategy;
     }
 
     public String getType() {
