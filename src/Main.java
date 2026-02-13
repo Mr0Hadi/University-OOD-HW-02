@@ -14,7 +14,7 @@ public class Main {
                 TicketType.BUG
         );
 
-        ticketService.handle(ticket);
+        ticketService.process(ticket);
     }
 }
 
