@@ -1,8 +1,9 @@
 package edu.ticket;
 
-import edu.ticket.factory;
+import edu.ticket.factory.*;
 import edu.enums.TicketChannel;
 import edu.enums.TicketStatus;
+import edu.enums.TicketType;
 import edu.state.TicketState;
 import edu.strategy.TicketHandlerStrategy;
 
@@ -16,10 +17,10 @@ public class Ticket {
     String response;
     private final TicketHandlerStrategy handlerStrategy;
 
-    public Ticket(int id, TicketChannel channel, String type) {
+    public Ticket(int id, TicketChannel channel, TicketType type) {
         this.id = id;
         this.channel = channel;
-        this.type = type;
+        this.type = type.name();
         this.handlerStrategy = TicketHandlerFactory.create(type);
     }
 

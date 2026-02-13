@@ -1,12 +1,14 @@
 package edu.ticket;
 
+import edu.enums.TicketStatus;
+
 public class TicketService {
 
 
     public void handle(Ticket ticket) {
-        String currentStatus = ticket.status;
+        String currentStatus = ticket.getStatus().name();
         String type = ticket.type;
-        String channel = ticket.channel;
+        String channel = ticket.getChannel().name();
 
         if (currentStatus.equals("NEW")) {
             System.out.println("Ticket created");
@@ -17,7 +19,7 @@ public class TicketService {
                 System.out.println("Received from email");
             }
 
-            ticket.setStatus("ASSIGNED");
+            ticket.setStatus(TicketStatus.ASSIGNED);
         }
 
         if (currentStatus.equals("ASSIGNED")) {
@@ -26,7 +28,7 @@ public class TicketService {
             } else {
                 System.out.println("Assigned to support");
             }
-            ticket.setStatus("IN_PROGRESS");
+            ticket.setStatus(TicketStatus.IN_PROGRESS);
         }
 
         if (currentStatus.equals("IN_PROGRESS")) {
@@ -38,18 +40,18 @@ public class TicketService {
                 System.out.println("Sending generic response");
             }
 
-            ticket.setStatus("RESOLVED");
+            ticket.setStatus(TicketStatus.RESOLVED);
         }
 
         if (currentStatus.equals("RESOLVED")) {
             System.out.println("Ticket resolved");
-            ticket.setStatus("CLOSED") ;
+            ticket.setStatus(TicketStatus.CLOSED) ;
         }
 
         if (currentStatus.equals("CLOSED")) {
             System.out.println("Ticket closed");
         }
 
-        System.out.println("Logging ticket handling : " + ticket.getId() + " -> " + ticket.status);
+        System.out.println("Logging ticket handling : " + ticket.getId() + " -> " + ticket.getStatus());
     }
 }

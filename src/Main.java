@@ -1,5 +1,6 @@
 import edu.ticket.Ticket;
 import edu.ticket.TicketService;
+import edu.enums.*;
 
 public class Main {
 
@@ -13,7 +14,7 @@ public class Main {
                 TicketType.BUG
         );
 
-        ticketService.process(ticket);
+        ticketService.handle(ticket);
     }
 }
 
