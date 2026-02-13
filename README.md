@@ -8,7 +8,7 @@
 | 2    | آیا در جاهایی از سیستم، کارهایی را دارید که میتواند به چند روش انجام شود؟                                                        | strategy          | برای پردازش درخواست و پاسخ دهی با توجه پارامتر های مختلف، از پترن استراتژی برای مشخص کردن الگوریتم استفاده میکنیم. | `TicketHandlerStrategy`, `GenericTicketHandler`, `BugTicketHandler`, `TicketHandlerFactory`, `Ticket`  |
 | 3    | آیا در جاهایی از سیستم، نیازمند ایجاد آبجک تهایی پیچیده هستید که به صورت مرحله به مرحله و با یک الگوریتم مشخص<br>ساخته م یشوند ؟ | factory           | برای ایجاد آبجکت های پیجیده به جای استفاده از if و else های زیاد، از factory استفاده میکنیم.                       | `TicketHandlerStrategy`, `GenericTicketHandler`, `BugTicketHandler`, `TicketHandlerFactory`, `Ticket`  |
 ## class diagram
-کنار فایل ها آپاود شده است .
+کنار فایل ها آپلود شده است .
 ## تحلیل شی گرا
 <div>
 <div dir="rtl">
